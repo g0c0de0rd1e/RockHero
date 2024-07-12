@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Accordion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      text-align: left;
+      background-color: #fff;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+  </style>
+  <link href="css/accordion-arrow.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="arrow" viewBox="0 0 16 16">
+      <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
+    </symbol>
+  </svg>
+
+  <div class="itc-accordion" style="max-width: 30rem; margin: 1rem auto 2rem;">
+    <div class="itc-accordion-item itc-accordion-item-show">
+      <div class="itc-accordion-header">
+        Заголовок 1
+        <svg class="itc-accordion-arrow" role="img" aria-label="Переключить"><use xlink:href="#arrow"></use></svg>
+      </div>
+      <div class="itc-accordion-body">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur et numquam optio, aut consequuntur iure magni tempore quo, velit, quos ipsum perferendis sit quidem sapiente voluptatem nesciunt rerum soluta amet.
+      </div>
+    </div>
+    <div class="itc-accordion-item">
+      <div class="itc-accordion-header">
+        Заголовок 2
+        <svg class="itc-accordion-arrow" role="img" aria-label="Переключить"><use xlink:href="#arrow"></use></svg>
+      </div>
+      <div class="itc-accordion-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non earum deleniti recusandae placeat rem eius quod
+        aliquid adipisci nemo alias debitis corporis pariatur quibusdam est, porro fuga id iure vero?
+      </div>
+    </div>
+    <div class="itc-accordion-item">
+      <div class="itc-accordion-header">
+        Заголовок 3
+        <svg class="itc-accordion-arrow" role="img" aria-label="Переключить"><use xlink:href="#arrow"></use></svg>
+      </div>
+      <div class="itc-accordion-body">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid repellat dicta vel sapiente laudantium minima porro voluptatem nam, alias aliquam qui quasi eveniet odit fugiat eius aspernatur nesciunt veniam expedita!
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import ItcAccordion from './js/accordion.js';
+
+    new ItcAccordion('.itc-accordion', {
+      alwaysOpen: true
+    });
+  </script>
+
+</body>
+
+</html>
