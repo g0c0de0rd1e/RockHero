@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ ."/helper.php";
+    require_once __DIR__ . 'helper.php';
 
     $name = $_POST['name'] ?? null;
     $email = $_POST['email'] ?? null;
@@ -8,28 +8,27 @@
     $passwordConfirm = $_POST['confirmPassword'] ?? null;
 
     $_SESSION['validation'] = [];
-
-    saveValue('name', $name);
-    saveValue('email', $email);
     
     if (empty($name)){
-       addValidationError('name', 'Неверное имя');
+        setValidationError('name', 'Неверное имя');
     }
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)){
-        addValidationError('email', 'Введена неправильная почта');
+        setValidationError('email', 'Введена неправильная почта');
     }
 
     if (empty($password)){
-        addValidationError('password', 'Пароль пустой');
+        setValidationError('password', 'Пароль пустой');
     }
 
     if ($password !== $passwordConfirm){
-        addValidationError('password', 'Пароли не совпадают');
+        setValidationError('password', 'Пароли не совпадают');
     }
 
     if (!empty($_SESSION['validation'])){
-        header('Location: /registration.php');
+        setValue('name', $name);
+        setValue('email', $email);
+        header('Location: /../registration.php');
     }
 
     $pdo = getPDO();
@@ -48,4 +47,4 @@
         die($e->getMessage());
     }
 
-    header('Location: /signin.php');
+    header('Location: /../signin.php');

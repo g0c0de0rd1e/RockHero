@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ ."/auth/helper.php";
+    require_once __DIR__ . '/auth/helper.php';
 
 ?>
 
@@ -12,7 +12,11 @@
     <title>RockHero</title>
 </head>
 <body>
-    <form class="registration-form" action="auth/registration.php">
+    <form class="registration-form" action="auth/registration.php" method="post">
+        <?php if (hasMessage('error')){
+            echo getMessage('error');
+        }
+        ?>
         <label for="name">
             Имя
             <input 

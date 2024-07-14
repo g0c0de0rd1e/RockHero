@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    function addValidationError(string $fieldName, string $message) {
+    function setValidationError(string $fieldName, string $message) {
         $_SESSION['validation'][$fieldName] = $message;
     }
 
@@ -19,7 +19,7 @@
         echo $message;
     }
 
-    function saveValue(string $key, mixed $value) {
+    function setValue(string $key, mixed $value) {
         $_SESSION['old'][$key] = $value;
     }
 
@@ -36,4 +36,26 @@
         } catch (\PDOException $e){
             die($e->getMessage());
         }
+    }
+
+    function findUser(string $email) : array|bool{
+        $pdo = getPDO();
+
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt->execute(['email' => $email]);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    function setMessage(string $key, string $message) : void{
+        $_SESSION['message'][$key] = $message;
+    }
+
+    function hasMessage(string $key) : bool{
+       return isset($_SESSION[$key]);
+    }
+
+    function getMessage(string $key) : string{
+        $value =  $_SESSION['message'][$key] ?? '';
+        unset($_SESSION['message'][$key]);
+        return $value;
     }
