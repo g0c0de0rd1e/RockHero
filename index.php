@@ -4,7 +4,7 @@
 	    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	    <title>WebRock</title>
-	    <link rel="stylesheet" href="css.css" type="text/css">
+	    <link rel="stylesheet" href="css/index.css" type="text/css">
 	    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -23,8 +23,8 @@
                     <a href="#"><li id="oval">About</li></a>
                     <a href="#"><li id="oval">Pro Version</li></a>
                     <a href="#"><li id="img-logo"><img src="img\logo\RockHero.png"/></li></a>
-                    <a href="#"><li id="oval">Sign In</li></a>
-                    <a href="#"><li id="oval">Sign Up</li></a>
+                    <a href="signin.php"><li id="oval">Sign In</li></a>
+                    <a href="registration.php"><li id="oval">Sign Up</li></a>
                 </ul>
             </nav>
             <section class="background-section">
